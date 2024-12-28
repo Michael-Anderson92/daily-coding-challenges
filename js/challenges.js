@@ -15,8 +15,10 @@ sayHello() //=> Hello!
 
 
 function sayHello() {
-  return "Hello!";
+  return console.log(`Hello!, <-- Answer to challenge 00`);
 }
+
+sayHello();
 
 
 /*-----------------------------------------------------------------------------
@@ -43,6 +45,8 @@ function addOne(number) {
       return 'Input is not a number';
   }
 }
+
+console.log(addOne(4), `<-- Answer to challenge 01`)
 
 /*-----------------------------------------------------------------------------
 Challenge: 02-addTwoNumbers
@@ -72,6 +76,8 @@ function addTwoNumbers(num1, num2) {
   }
 }
 
+console.log(addTwoNumbers(4, 2), ` <--Answer to challenge 02`)
+
 /*-----------------------------------------------------------------------------
 Challenge: 03-sumNumbers
 
@@ -96,11 +102,10 @@ function sumNumbers(arr) {
   for (let i = 0; i < arr.length; i++) {
     sum += arr[i];
 }
-  console.log(sum);
   return sum;
 }
 
-sumNumbers([10, 5]);
+console.log(sumNumbers([10, 5]), `<-- Answer to challenge 03`);
 
 
 
@@ -125,11 +130,26 @@ addList(7,-12) //=> -5
 -----------------------------------------------------------------------------*/
 // Your solution for 04-addList here:
 
-function addList() {
-
-
-  
+function addList(array) {
+  try {
+    if (!Array.isArray(array)) {
+      throw new Error('Input is not an array');
+    }
+  let sum = 0;
+    for (let i = 0; i < array.length; i++) {
+      if (typeof array[i] !== 'number') {
+        throw new Error ('Array contains non-number elements');
+      }
+     sum += array[i];
+    }
+    return sum;
+  } catch (error) {
+    return `Error: invalid input`;
+  }
 }
+
+console.log(addList([234,22,1]), `<-- Answer to challenge 04`)
+// console.log((), `<-- Answer to challenge 04`); //
 
 
 /*-----------------------------------------------------------------------------
@@ -155,9 +175,22 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------------------*/
 // Your solution for 05-computeRemainder here:
 
+function computeRemainder(num1, num2) {
+  if (num2 === 0) {
+    return Infinity;
+  } else if (num1 > num2) {
+  trueSum = num1 / num2; 
+  floorSum = Math.floor(trueSum) * num2;
+  remainder = num1 - floorSum;
+  return remainder } else {
+    return 0
+  }
+  
+} 
 
+console.log(computeRemainder(100,51), `<-- Answer to challenge 05`)
 
-
+// console.log((), `<-- Answer to challenge 05`); //
 
 /*-----------------------------------------------------------------------------
 Challenge: 06-range
@@ -184,7 +217,7 @@ range(5,2) //=> "First argument must be less than second"
 
 
 
-
+// console.log((), `<-- Answer to challenge 06`); //
 
 /*-----------------------------------------------------------------------------
 Challenge: 07-reverseUpcaseString
@@ -206,7 +239,7 @@ reverseUpcaseString("SEI Rocks!") //=> "!SKCOR IES"
 
 
 
-
+// console.log((), `<-- Answer to challenge 07`); //
 
 /*-----------------------------------------------------------------------------
 Challenge: 08-removeEnds
@@ -228,7 +261,7 @@ removeEnds('a') //=> "" (empty string)
 
 
 
-
+// console.log((), `<-- Answer to challenge 08`); //
 
 /*-----------------------------------------------------------------------------
 Challenge: 09-charCount
@@ -269,7 +302,7 @@ charCount('Today is fantastic!')
 // Your solution for 09-charCount here:
 
 
-
+// console.log((), `<-- Answer to challenge 09`); //
 
 
 /*-----------------------------------------------------------------------------
@@ -299,6 +332,8 @@ formatWithPadding(1234, '*', 3) //=> "1234"
 // Your solution for 10-formatWithPadding here:
 
 
+// console.log((), `<-- Answer to challenge 10`); //
+
 // 3:59
 // Next 10 challenges for challenges.js:
 /*-----------------------------------------------------------------------------
@@ -325,8 +360,17 @@ isPalindrome('') //=> true
 -----------------------------------------------------------------------------*/
 // Your solution for 11-isPalindrome here:
 
+function isPalindrome(number) {
+  const str = number.toString();
+  for (let x = 0; x < Math.floor(str.length / 2); x++) {
+      if (str[x] !== str[str.length - 1 - x]) {
+          return false;
+      }
+  }
+  return true;
+}
 
-
+console.log(isPalindrome(12321), `<-- Answer to challenge 11`)
 
 
 /*-----------------------------------------------------------------------------
