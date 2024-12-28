@@ -371,7 +371,7 @@ function isPalindrome(number) {
 }
 
 console.log(isPalindrome(12321), `<-- Answer to challenge 11`)
-
+ 
 
 /*-----------------------------------------------------------------------------
 Challenge: 12-hammingDistance
