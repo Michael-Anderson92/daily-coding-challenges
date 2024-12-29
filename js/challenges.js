@@ -190,7 +190,6 @@ function computeRemainder(num1, num2) {
 
 console.log(computeRemainder(100,51), `<-- Answer to challenge 05`)
 
-// console.log((), `<-- Answer to challenge 05`); //
 
 /*-----------------------------------------------------------------------------
 Challenge: 06-range
@@ -215,9 +214,19 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------------------*/
 // Your solution for 06-range here:
 
+const range = (int1, int2) => {
+  let array = []
+  if (int1 > int2) {
+    console.log("First argument must be less than second") 
+  } else {
+  for (let i = int1; i < int2; i++) {
+  array.push(i);
+}
+return array
+}
+}
 
-
-// console.log((), `<-- Answer to challenge 06`); //
+console.log(range(5,15), `<-- Answer to challenge 06`)
 
 /*-----------------------------------------------------------------------------
 Challenge: 07-reverseUpcaseString
@@ -237,9 +246,22 @@ reverseUpcaseString("SEI Rocks!") //=> "!SKCOR IES"
 -----------------------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
 
+function reverseUpcaseString(str) {
+ let reversedString = str.toUpperCase('').split('').reverse().join('');
+ console.log(reversedString, `<-- Answer to challenge 07 (method 1)`)
+}
 
+reverseUpcaseString('This is Backwards!', `<-- Answer to challenge 07`)
 
-// console.log((), `<-- Answer to challenge 07`); //
+function reverseUpcaseString2(str) {
+  let reversedStr = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversedStr += str[i];
+  }
+  console.log(reversedStr.toUpperCase(), `<-- Answer to challenge 07 (method 2)`);
+}
+
+reverseUpcaseString2('This is Backwards!')
 
 /*-----------------------------------------------------------------------------
 Challenge: 08-removeEnds
